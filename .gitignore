@@ -60,3 +60,4 @@ buck-out/
 
 # Storybook
 /storybook/config.json
+/dist-web

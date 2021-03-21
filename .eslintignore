@@ -1,0 +1,5 @@
+node_modules
+dist-web
+ios
+android
+*.js

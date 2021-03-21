@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import { PieChart } from '../../Atoms/PieChart';
+import { VotesIndex } from '../../Atoms/VotesIndex';
 
 const Container = styled.View`
   flex-direction: row;
@@ -22,31 +24,34 @@ const Subline = styled.Text`
 `;
 
 const SideContainer = styled.View`
-  align-items: flex-end;
   min-width: 50px;
   justify-content: space-between;
+  align-items: center;
 `;
 
-// const PieChartContainer = styled.View`
-//   flex-direction: row;
-//   width: 45px;
-//   justify-content: space-between;
-// `;
+const PieChartContainer = styled.View`
+  flex-direction: row;
+  width: 45px;
+  height: 45px;
+  justify-content: space-between;
+`;
 
 interface Props {
   title: string;
   sessionTOPHeading: string;
   isIntro?: boolean;
-  renderPieCharts?: React.ReactNode[];
+  pieChart?: React.ReactElement<typeof PieChart>;
+  voteIndex?: React.ReactElement<typeof VotesIndex>;
 }
 
 export const ListItem: React.FC<Props> = ({
   isIntro,
   title,
   sessionTOPHeading,
+  pieChart,
+  voteIndex,
   // voted,
   // votes,
-  // renderPieCharts,
   // voteDate,
   // voteEnd,
 }) => {
@@ -61,8 +66,8 @@ export const ListItem: React.FC<Props> = ({
         )}
       </TextContainer>
       <SideContainer>
-        {/* <VotesIndex {...filter(VoteIndexFragmentDoc, { voted, votes })} /> */}
-        {/* <PieChartContainer>{renderPieCharts}</PieChartContainer> */}
+        {voteIndex}
+        {!!pieChart && <PieChartContainer>{pieChart}</PieChartContainer>}
         {/* <VoteDate {...filter(VoteDateFragmentDoc, { voteDate, voteEnd })} /> */}
       </SideContainer>
     </Container>

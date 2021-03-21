@@ -15,14 +15,10 @@ interface Props {
   data: ChartEntry[];
 }
 
-const domain = ['yes', 'abstination', 'no'];
-
 export const PieChart: React.FC<Props> = ({ size, data }) => {
-  const pieObj = pie<ChartEntry>()
-    .value((d) => {
-      return d.value;
-    })
-    .sort(({ name }) => domain.indexOf(name.toLowerCase()));
+  const pieObj = pie<ChartEntry>().value((d) => d.value);
+
+  console.log('PIECHART');
 
   const arcs = pieObj(data);
 

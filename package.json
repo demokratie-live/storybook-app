@@ -4,12 +4,11 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "ios": "react-native run-ios --device",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "storybook": "start-storybook -p 7007",
-    "build-storybook": "build-storybook"
+    "storybook": "tasks/storybook.sh"
   },
   "dependencies": {
     "react": "17.0.1",

@@ -3,14 +3,23 @@ import {
   getStorybookUI,
   configure,
   addDecorator,
+  addParameters,
 } from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
+import { withTheme } from 'storybook-addon-ondevice-styled-theme';
+import { lightTheme, darkTheme } from '../../packages/ui/src/theme';
 import { host, port } from './config.json';
 
 import './rn-addons';
 
 // enables knobs for all stories
 addDecorator(withKnobs);
+
+addDecorator(withTheme);
+
+addParameters({
+  themes: [lightTheme, darkTheme],
+});
 
 // import stories
 configure(() => {

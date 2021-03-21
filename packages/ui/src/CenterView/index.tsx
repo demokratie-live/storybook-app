@@ -1,19 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import styled from 'styled-components/native';
 
-export const CenterView: React.FC = ({ children }) => {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-      }}>
-      {children}
-    </View>
-  );
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: ${({ theme }) => {
+    console.log({ theme });
+    return theme.colors.main || 'teal';
+  }};
+  /* background-color: blue; */
+`;
+
+export const CenterView: React.FC = ({ children, ...props }) => {
+  console.log(props);
+
+  return <Container>{children}</Container>;
 };
 
 CenterView.defaultProps = {

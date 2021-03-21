@@ -1,5 +1,12 @@
 import React from 'react';
-import { TouchableHighlight } from 'react-native';
+import styled from 'styled-components/native';
+
+const TouchableHighlight = styled.TouchableHighlight`
+  background-color: ${({ theme }) => {
+    console.log('BUTTON', { theme });
+    return theme.colors.main || 'teal';
+  }};
+`;
 
 interface Props {
   onPress: () => void;

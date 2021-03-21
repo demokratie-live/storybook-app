@@ -12,7 +12,8 @@
     "lint:es": "eslint . --ext .ts,.tsx --fix",
     "storybook": ".storybook/native/storybook.sh",
     "storybook:web": "node_modules/@storybook/react/bin/index.js -p 6006 --config-dir ./.storybook/web",
-    "storybook:build": "build-storybook --config-dir ./.storybook/web --output-dir dist-web --quiet"
+    "storybook:build": "build-storybook --config-dir ./.storybook/web --output-dir dist-web --quiet",
+    "storybook:deploy": "yarn storybook:build && yarn storybook-to-ghpages -e dist-web"
   },
   "dependencies": {
     "react": "17.0.1",
@@ -31,6 +32,7 @@
     "@storybook/react": "^5.3.21",
     "@storybook/react-native": "^5.3.25",
     "@storybook/react-native-server": "^5.3.23",
+    "@storybook/storybook-deployer": "^2.8.7",
     "@types/jest": "^26.0.20",
     "@types/react-native": "^0.64.0",
     "@types/react-test-renderer": "^16.9.2",

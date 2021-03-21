@@ -25,10 +25,7 @@ export const ColorItem = styled.View`
 export const ColorItemColor = styled.View<ColorItemProps>`
   width: 100px;
   height: 100px;
-  background-color: ${({ color }) => {
-    console.log('A color', color);
-    return color;
-  }};
+  background-color: ${({ color }) => color};
   border-radius: 100px;
   border-color: ${({ theme }) => theme.colors.primary};
   border-width: 1px;

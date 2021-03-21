@@ -17,8 +17,6 @@ interface ColorGroup {
 export const Colors: React.FC = () => {
   const theme = useTheme();
 
-  console.log(theme.colors);
-
   const colorGroups = Object.keys(theme.colors).reduce<ColorGroup[]>(
     (prev, color) => {
       if (typeof (theme.colors as any)[color] === 'string') {
@@ -39,24 +37,20 @@ export const Colors: React.FC = () => {
             ],
           },
         ];
-      } else {
-        return [
-          ...prev,
-          {
-            title: color,
-            colors: Object.keys((theme.colors as any)[color]).map((title) => ({
-              title,
-              color: (theme.colors as any)[color][title],
-            })),
-          },
-        ];
       }
-      return prev;
+      return [
+        ...prev,
+        {
+          title: color,
+          colors: Object.keys((theme.colors as any)[color]).map((title) => ({
+            title,
+            color: (theme.colors as any)[color][title],
+          })),
+        },
+      ];
     },
     [] as ColorGroup[],
   );
-
-  console.log({ colorGroups });
 
   return (
     <ScrollView horizontal>

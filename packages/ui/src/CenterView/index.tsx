@@ -9,7 +9,7 @@ const Container = styled.View`
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
-export const CenterView: React.FC = ({ children, ...props }) => {
+export const CenterView: React.FC = ({ children }) => {
   return <Container>{children}</Container>;
 };
 

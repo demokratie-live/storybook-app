@@ -21,7 +21,13 @@ storiesOf('Molecules', module).add('List item', () => (
       isIntro={boolean('Long Text', true)}
       pieChart={
         boolean('chart', true) ? (
-          <PieChart data={lightData} size={45} />
+          <PieChart
+            data={lightData.map((d) => ({
+              ...d,
+              highlight: boolean('voted', false) ? d.highlight : false,
+            }))}
+            size={45}
+          />
         ) : undefined
       }
       voteIndex={

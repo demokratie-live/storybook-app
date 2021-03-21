@@ -9,11 +9,11 @@ const Wrapper = styled.View`
 `;
 
 const Text = styled.Text`
-  color: ${({ theme }) => theme.colors.secondaryText};
+  color: ${({ theme }) => theme.colors.text.primary};
 `;
 
 const LinkColorText = styled.Text`
-  color: ${({ theme }) => theme.colors.primaryColoredText};
+  color: ${({ theme }) => theme.colors.text.colored};
 `;
 
 export const MadeWithLove: React.FC = () => (

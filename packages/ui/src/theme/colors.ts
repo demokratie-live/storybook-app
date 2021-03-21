@@ -82,7 +82,7 @@ export const darkColors: Colors = {
   text: {
     primary: '#B5B5B5',
     secondary: '#8F8E94',
-    colored: '#B5B5B5',
+    colored: '#29608B',
   },
   votesUser: {
     yes: '#16C063',

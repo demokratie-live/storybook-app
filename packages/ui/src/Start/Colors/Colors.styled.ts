@@ -10,6 +10,7 @@ export const Group = styled.View`
 
 export const GroupTitle = styled.Text`
   font-size: 30px;
+  color: ${({ theme }) => theme.colors.text.primary};
 `;
 
 export interface ColorItemProps {
@@ -31,4 +32,8 @@ export const ColorItemColor = styled.View<ColorItemProps>`
   border-radius: 100px;
   border-color: ${({ theme }) => theme.colors.primary};
   border-width: 1px;
+`;
+
+export const Text = styled.Text`
+  color: ${({ theme }) => theme.colors.text.primary};
 `;

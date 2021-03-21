@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView } from 'react-native';
 import { useTheme } from 'styled-components/native';
 import * as S from './Colors.styled';
 
@@ -59,21 +59,23 @@ export const Colors: React.FC = () => {
   console.log({ colorGroups });
 
   return (
-    <ScrollView>
-      {colorGroups.map(({ title, colors }) => (
-        <S.ColorGroupContainer key={title}>
-          <S.GroupTitle>{title}</S.GroupTitle>
-          <S.Group>
-            {colors.map(({ title: colorTitle, color }) => (
-              <S.ColorItem key={colorTitle}>
-                <S.ColorItemColor color={color} />
-                <Text>{colorTitle}</Text>
-                <Text>{color}</Text>
-              </S.ColorItem>
-            ))}
-          </S.Group>
-        </S.ColorGroupContainer>
-      ))}
+    <ScrollView horizontal>
+      <ScrollView>
+        {colorGroups.map(({ title, colors }) => (
+          <S.ColorGroupContainer key={title}>
+            <S.GroupTitle>{title}</S.GroupTitle>
+            <S.Group>
+              {colors.map(({ title: colorTitle, color }) => (
+                <S.ColorItem key={colorTitle}>
+                  <S.ColorItemColor color={color} />
+                  <S.Text>{colorTitle}</S.Text>
+                  <S.Text>{color}</S.Text>
+                </S.ColorItem>
+              ))}
+            </S.Group>
+          </S.ColorGroupContainer>
+        ))}
+      </ScrollView>
     </ScrollView>
   );
 };

@@ -16,8 +16,11 @@
     "storybook:deploy": "yarn storybook:build && yarn storybook-to-ghpages -e dist-web"
   },
   "dependencies": {
+    "d3": "^6.6.0",
+    "d3-shape": "^2.1.0",
     "react": "17.0.1",
     "react-native": "0.64.0",
+    "react-native-svg": "^12.1.0",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
@@ -33,6 +36,8 @@
     "@storybook/react-native": "^5.3.25",
     "@storybook/react-native-server": "^5.3.23",
     "@storybook/storybook-deployer": "^2.8.7",
+    "@types/d3": "^6.3.0",
+    "@types/d3-shape": "^2.0.0",
     "@types/jest": "^26.0.20",
     "@types/react-native": "^0.64.0",
     "@types/react-test-renderer": "^16.9.2",

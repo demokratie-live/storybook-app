@@ -7,7 +7,7 @@ set -euo pipefail
 host=$(ifconfig en0 | grep inet | grep -v inet6 | awk '{print $2}')
 
 json="{\"runStorybook\": true, \"host\": \"$host\", \"port\": 7007 }"
-echo $json >storybook/config.json
+echo $json >.storybook/native/config.json
 
 printf "\n🚨 ️Don't forget to run \"yarn android\" in a new shell once the server is up!\n\n"
-yarn start-storybook -p 7007 -h $host
+yarn start-storybook --config-dir ./.storybook/native -p 7007 -h $host

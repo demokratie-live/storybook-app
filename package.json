@@ -8,9 +8,9 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "storybook": "tasks/storybook.sh",
-    "storybook:web": "node_modules/@storybook/react/bin/index.js -p 6006 --config-dir ./storybook-website",
-    "storybook:build": "build-storybook --config-dir ./storybook-website --output-dir dist-web --quiet"
+    "storybook": ".storybook/native/storybook.sh",
+    "storybook:web": "node_modules/@storybook/react/bin/index.js -p 6006 --config-dir ./.storybook/web",
+    "storybook:build": "build-storybook --config-dir ./.storybook/web --output-dir dist-web --quiet"
   },
   "dependencies": {
     "react": "17.0.1",

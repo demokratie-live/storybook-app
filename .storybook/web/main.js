@@ -1,5 +1,5 @@
 module.exports = {
-  stories: ['../storybook/stories/index.js'],
+  stories: ['../native/stories/index.js'],
   webpackFinal: async (config) => {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),

@@ -85,9 +85,9 @@ export const darkColors: Colors = {
     colored: '#29608B',
   },
   votesUser: {
-    yes: '#16C063',
-    abstination: '#2882E4',
-    no: '#EC3E31',
+    yes: '#11994f',
+    abstination: '#1767be',
+    no: '#d02013',
   },
   votesGovernment: {
     yes: '#99C93E',

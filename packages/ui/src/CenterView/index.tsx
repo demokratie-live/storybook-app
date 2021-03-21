@@ -6,16 +6,10 @@ const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => {
-    console.log({ theme });
-    return theme.colors.main || 'teal';
-  }};
-  /* background-color: blue; */
+  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const CenterView: React.FC = ({ children, ...props }) => {
-  console.log(props);
-
   return <Container>{children}</Container>;
 };
 

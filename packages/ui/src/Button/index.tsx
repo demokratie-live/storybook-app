@@ -2,10 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 
 const TouchableHighlight = styled.TouchableHighlight`
-  background-color: ${({ theme }) => {
-    console.log('BUTTON', { theme });
-    return theme.colors.main || 'teal';
-  }};
+  background-color: ${({ theme }) => theme.colors.main};
 `;
 
 interface Props {
